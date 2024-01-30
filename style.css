@@ -1,0 +1,375 @@
+
+/* Style Global Start */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    background-color: rgb(228, 214, 209);
+    font-size: 18px;
+    font-family: 'Satoshi', sans-serif;
+   
+    
+}
+
+/* Style Global End */
+
+/* Container */
+
+.container {
+    display: grid;
+    gap: 10px;
+    /* overflow-x: hidden; */
+    /* margin: 50px; */
+   
+}
+
+/* Header */
+
+.header {
+    display: grid;
+    grid-template-areas: 
+    'hero hero feature-1' 
+    'hero hero feature-2';
+    gap: 5px;
+}
+
+.hero {
+    grid-area: hero;
+    min-height: 300px;
+    background-image:url(images/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+}
+
+.hero > * {
+    display: none;
+}
+
+.hero:hover {
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+.features {
+    background-color: black;
+    color: white;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+.feature-1 {
+    grid-area: feature-1;
+    background-image: url(images/satu.jpg);
+    background-size: cover;
+}
+
+.feature-2 {
+    grid-area: feature-2;
+    background-image: url(images/dua.jpg);
+    background-size: cover;
+}
+
+.features:hover {
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+.heading-2 {
+    font-size: 3em;
+    font-weight: 200;
+}
+
+
+
+/* Navbar Start */
+
+.menu {
+    order: -1;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+
+.menu .brand {
+    font-size: 1.3em;
+    color: #333;
+}
+
+.menu ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));    
+    gap: 5px;
+}
+
+.menu a {
+    display: block;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+   text-transform: uppercase;
+   font-size: 0.9em; 
+}
+
+.menu a:hover {
+    background-color: #ddd;
+    color: black;
+    border: 1px solid black;
+    transition: all 0.5s;
+    scale: 1.1;
+}
+/* Hamburger Menu */
+
+.menu-toggle {
+    height: 20px;
+    position: relative;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 85px;
+    height: 27px;
+    top: -2px;
+    left: -30px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu-toggle span {
+    display: block;
+    background-color: whitesmoke;
+    width: 28px;
+    height: 3px;
+    border-radius: 100px;
+    transition: all 0.5s;
+}
+
+/* footer */
+.footer {
+    margin-top: auto;
+    height: 10vh;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked~span:nth-child(2) {
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked~span:nth-child(4) {
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked~span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+/* Services */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.service {
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.service .icon {
+    font-size: 2.5em;
+}
+
+.service h3 {
+    font-size: 1.5em;
+    margin: 3px 0;
+}
+
+.service p {
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-size: 0.8em;
+}
+
+.service:hover {
+    scale: 1.1;
+    transition: all .6s;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+}
+
+/* Tangkai */
+
+.tangkai {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.daun {
+    margin-top: 15px;
+    background-image: url(images/empat.jpg);    
+    background-size: cover;
+    background-position: center;
+    background-color: white;
+    height: 300px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}   
+
+.keterangan  {
+    font-weight: bolder;
+    font-size: 70px;
+    /* letter-spacing: -5px; */
+    /* word-spacing: 100px; */
+    font-family: 'General Sans', sans-serif;
+}
+
+
+/* Gallery */
+.gallery {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    transition: all .5s;
+    border: 1px solid black;
+
+}
+
+.gallery h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+
+
+/* Responsive Breakpoint */
+
+@media screen and (max-width: 1024px) {
+    .menu {
+        order: inherit;
+        grid-template-columns: 1fr;
+    }
+
+    .menu .brand {
+        display: none;
+    }
+
+    .hero > * {
+        display: block;
+        background-color: black;
+        color: white;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        order: -1;
+        justify-items: end;
+    }
+
+    .menu-toggle {
+            display: flex;
+        }
+    
+        .menu ul {
+            display: flex;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            right: 0;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: black;
+            z-index: 1;
+            background-color: black;
+            transform: translatey(-100%);
+            transition: all 1s;
+            opacity: 0;
+        }
+    
+        .menu ul.slide {
+            opacity: 1;
+            transform: translatey(0);
+        }
+        .tangkai{
+            grid-template-columns: 1fr;
+        }
+
+}
+
+@media screen and (max-width: 600px) {
+    /* body {
+        margin: 15px;
+    } */
+
+    .header {
+        grid-template-areas: 
+        "hero"
+        "feature-1"
+        "feature-2";
+    }
+
+    .tangkai .keterangan {
+        text-align: center;
+        font-size: 3em;
+    }
+}
